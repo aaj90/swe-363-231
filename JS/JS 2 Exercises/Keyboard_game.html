@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(153, 153, 153);
+            background: radial-gradient(circle, rgba(153, 153, 153, 0.6082808123249299) 0%, rgba(27, 15, 29, 0.5802696078431373) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .cell {
+            font-family: sans-serif;
+            font-size: 35px;
+            font-weight: bolder;
+            background-color: rgb(190, 190, 199);
+            width: 160px;
+            height: 160px;
+            box-shadow: 5px 10px 15px rgb(59, 53, 70);
+            ;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .cell:hover {
+            background-color: rgb(134, 122, 145);
+        }
+
+        .row {
+            display: flex;
+        }
+
+        h1 {
+            color: white;
+            font-family: sans-serif;
+            font-size: 50px;
+            font-weight: bolder;
+        }
+
+        button {
+            margin-top: 50px;
+            position: relative;
+            border: none;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            outline-offset: 4px;
+            transition: filter 250ms;
+            user-select: none;
+            touch-action: manipulation;
+        }
+
+        .shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: hsl(0deg 0% 0% / 0.25);
+            will-change: transform;
+            transform: translateY(2px);
+            transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        .edge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: linear-gradient(to left,
+                    hsl(340deg 100% 16%) 0%,
+                    hsl(340deg 100% 32%) 8%,
+                    hsl(340deg 100% 32%) 92%,
+                    hsl(340deg 100% 16%) 100%);
+        }
+
+        .front {
+            display: block;
+            position: relative;
+            padding: 12px 27px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            color: white;
+            background: hsl(345deg 100% 47%);
+            will-change: transform;
+            transform: translateY(-4px);
+            transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        button:hover {
+            filter: brightness(110%);
+        }
+
+        button:hover .front {
+            transform: translateY(-6px);
+            transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        button:active .front {
+            transform: translateY(-2px);
+            transition: transform 34ms;
+        }
+
+        button:hover .shadow {
+            transform: translateY(4px);
+            transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        button:active .shadow {
+            transform: translateY(1px);
+            transition: transform 34ms;
+        }
+
+        button:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        .instructions {
+            background-color: rgba(0, 0, 0, 0.37);
+            width: 600px !important;
+            text-align: center;
+            border-radius: 10px;
+            padding: 5px 5px;
+        }
+
+        .instructions h1{
+            margin-top: 5px;
+        }
+        .instructions li{
+            color: white;
+            font-family: sans-serif;
+            font-size: 20px;
+            text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="instructions">
+        <h1>
+            Instructions:
+        </h1>
+        <ul>
+            <li>Choose the cell to play by using the numbers on the keyboard.</li>
+            <li>The game will alternate between X and O.</li>
+        </ul>
+    </section>
+
+    <h1 id="turn">
+        Now it's is <span>X</span> turn
+    </h1>
+    <!-- Board -->
+    <div class="board">
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <script>
+
+            // decided which turn is it
+            let turn = "X";
+            var gameEnded = false;
+            var W;
+            let counter = 0;
+            let board = document.getElementsByClassName("cell");
+            for(let i=0; i<9;i++){
+                board[i].innerText = i+1;
+            }
+            let event = document.addEventListener("keydown", cellClicked);
+
+            function refresh() {
+
+                window.location.reload("Refresh")
+            }
+
+            function checkWinner(player) {
+                let b = document.getElementsByClassName("cell");
+                if ((b[0].innerText == player) && (b[1].innerText == player) && (b[2].innerText == player)) {
+                    gameEnded = true;
+                    W = player;
+                } else if ((b[3].innerText == player) && (b[4].innerText == player) && (b[5].innerText == player)) {
+                    gameEnded = true;
+                    W = player;
+                } else if ((b[6].innerText == player) && (b[7].innerText == player) && (b[8].innerText == player)) {
+                    gameEnded = true;
+                    W = player;
+                } else if ((b[0].innerText == player) && (b[3].innerText == player) && (b[6].innerText == player)) {
+                    gameEnded = true;
+                    W = player;
+                } else if ((b[1].innerText == player) && (b[4].innerText == player) && (b[7].innerText == player)) {
+                    gameEnded = true;
+                    W = player;
+                } else if ((b[2].innerText == player) && (b[5].innerText == player) && (b[8].innerText == player)) {
+                    gameEnded = true;
+                    W = player;
+                } else if ((b[0].innerText == player) && (b[4].innerText == player) && (b[8].innerText == player)) {
+                    gameEnded = true;
+                    W = player;
+                } else if ((b[2].innerText == player) && (b[4].innerText == player) && (b[6].innerText == player)) {
+                    gameEnded = true;
+                    W = player;
+                }
+
+            }
+
+
+            function cellClicked(event) {
+                
+                var cellNumber = event.key;
+                let cells = document.getElementsByClassName("cell");
+                
+
+
+                if (cellNumber > 0 && cellNumber < 10) {
+                    let index = cellNumber - 1;
+                    
+                    if (((cells[index].innerText != "X") && (cells[index].innerText != "O")) && (gameEnded == false)) {
+                        cells[index].innerText = turn;
+                        checkWinner(turn);
+                        if (turn == "X") {
+                            cells[index].style.background = "radial-gradient(circle, rgba(255,0,0,0.8743872549019608) 0%, rgba(97,3,0,0.6699054621848739) 100%)";
+                        } else {
+                            cells[index].style.background = "radial-gradient(circle, rgba(112,255,0,0.7035189075630253) 0%, rgba(30,97,0,0.804359243697479) 100%)";
+                        }
+                        if (gameEnded) {
+                            // HW
+                            Winner = document.getElementById("turn");
+                            let winMsg = "The Winner is " + W;
+                            Winner.innerText = winMsg;
+
+                        } else {
+                            // change turn
+                            turn = turn === "X" ? "O" : "X"
+
+
+                            //change title
+                            turnLetter = document.querySelector("#turn span")
+                            turnLetter.innerText = turn
+                            counter++;
+
+                        }
+                    }
+
+                    if (counter == 9 && (gameEnded == false)) {
+                        Winner = document.getElementById("turn");
+                        let winMsg = "Draw";
+                        Winner.innerText = winMsg;
+
+                    }
+                }
+            }
+        </script>
+    </div>
+
+    <button onClick="refresh(this)">
+        <span class="shadow"></span>
+        <span class="edge"></span>
+        <span class="front text"> Restart
+        </span>
+    </button>
+
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+body{
+    background: rgb(195,134,34);
+background: radial-gradient(circle, rgba(195,134,34,0.8239670868347339) 0%, rgba(253,45,45,1) 100%);
+}
+
+.Buttons {
+    position: center;
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+
+
+}
+
+img {
+    margin: 10px 200px;
+    width: 80px ;
+     height: 80px;
+}
+
+@keyframes grow {
+    to {
+        width: 90px ;
+        height: 90px;
+    }
+  }
+
+.selection:hover {
+    animation-name: grow;
+    animation-duration: 0.5s; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+
+
+  @keyframes comeUp {
+    0%{
+        animation-delay: 2s;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+#p1,
+#p2 {
+    margin-top: 150px;
+    margin-left: 450px;
+    width: 200px ;
+    height: 200px ;
+    animation-name: comeUp !important;
+    animation-duration: 1.5s !important; 
+
+}
+
+
+
+#winOrLose {
+    margin-top: 100px;
+    margin-left: 850px;
+    width: 200px ;
+    height: 200px;
+    animation-name: comeUp !important;
+    animation-duration: 3s !important; 
+    
+}
+

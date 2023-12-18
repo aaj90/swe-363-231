@@ -1,0 +1,34 @@
+- Go one of the websites that you visit frequently using your browser
+o What is the url ?
+        https://www.youtube.com/
+
+
+- Open the developer tools (Inspect) and answer the following
+o What is the IP address of the server host
+        172.217.19.142:443
+
+o How many http(s) request were made
+        71 request 
+
+o What are the different types returned from all of the requests
+    1-document
+    2-xhr
+    3-stylesheet
+    4-x-icon
+    5-text/plain
+    6-svg+xml
+    7-png
+    8-media
+    9-manifest
+    10-json
+    11-jpeg
+    12-font
+    13-fetch
+    14-script
+
+o What was the largest file returned
+    desktop_polymer_rtl.js with 1.5MB size
+
+
+o How many ms did it take?
+    it took 256 ms

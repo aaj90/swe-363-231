@@ -1,0 +1,104 @@
+/*---- E2 -------*/
+
+.table_head {
+    text-transform: uppercase;
+}
+
+li {
+    color: green;
+}
+
+.top {
+    background-color: #ECAA4D ;
+}
+
+em {
+    background-color: rgb(98, 165, 219);
+}
+
+#the_most_important {
+    background-color: #ECAA4D ;
+    text-transform: uppercase;
+}
+
+
+
+/*---- E3 -------*/
+
+
+h2 {
+    font-family: sans-serif;
+  }
+  
+
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: capitalize;
+  }
+  
+
+  h2 + p::first-letter {
+    font-size: x-large;
+  }
+  
+  
+  table tbody tr:hover {
+    background-color: rgb(170, 159, 141);
+  }
+  
+
+  table tbody tr:hover td {
+    background-color: rgb(170, 159, 141);
+  }
+  
+
+  nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav a:first-child {
+    text-decoration: underline;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #4b4a4860;
+  }
+  
+  ::selection {
+    background-color: rgb(46, 46, 46);
+    color: white;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+  
+  input {
+    height: 20px;
+  }
+  
+  input[type="text"] {
+    border: 2px solid lightgray;
+  }
+  
+
+  input[name="message"] {
+    height: 50px;
+  }

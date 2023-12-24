@@ -1,0 +1,275 @@
+/*
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  
+  nav h1{
+    font-size: 24px !important;
+  }
+  
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .Top {
+    background-image: url("https://github.com/aaj90/swe-363-231/blob/main/HTML/Pics/shirt-mockup-concept-with-plain-clothing%20(2).jpg?raw=true");
+    background-size: cover;
+    color: #fff;
+    padding: 20px 0;
+    height: 650px;
+  }
+  
+  .Slogan {
+    text-align: center;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    width: 50%;
+  }
+  
+  .Slogan h1 {
+    font-size: 50px;
+  }
+  
+  .Slogan p {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  
+  .categories {
+    /* margin: 125px 250px; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.226);
+    background-color: #35322f;
+   }
+   
+   
+   .category-card {
+     background-color: #fff;
+     margin-right: 20px;
+     border-radius: 2.5px;
+    
+     /*
+     display: inline-block;
+     position: sticky;
+     justify-content: space-between;
+     */
+     height: 600px;
+     width: 600px; /* Adjust the width as needed */
+   }
+   
+   .category-card-men{
+    /* background-image: url("https://images.stylishop.com/media/catalog/product/7006390422/images/7006390422_1.jpg?v=1");*/
+    background-image: url("https://images.stylishop.com/media/catalog/product/7003632225/images/7003632225_.jpg?v=1");
+     background-size: cover;
+   }
+   
+   .category-card-women{
+     background-image: url("https://images.stylishop.com/media/catalog/product/59094921/images/59094921_90.jpg?v=1");
+     background-size: cover;
+   }
+   
+   .category-card h3 {
+     background-color: #33333356;
+     width: 100%;
+     color: rgb(255, 255, 255);
+     text-shadow: 5px 5px #333;
+     font-size: 40px;
+     margin-top: 80%;
+   }
+   
+  
+  
+   .new-products {
+    background-color: #35322f;
+    width: 100%;
+    height: 100%;
+    padding-top: 1%;
+    padding-bottom: 10%;
+    box-shadow: 5px 0px 5px rgba(165, 165, 165, 0.596);
+  }
+  
+  .new-products h2{
+    text-align: center;
+    color: rgb(28, 28, 28);
+    size: 500px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: #333;
+  }
+  
+  .product-cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  
+  .product-card {
+    background-color: #5e5854;
+    color: #ffffff;
+    width: 15%;
+    border-radius: 3px;
+    padding-bottom: 1%;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(78, 77, 76, 0.596);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .product-card:hover {
+    width: 15.5%;
+    transition: 0.5s;
+  
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    margin-bottom: 5%;
+  }
+  
+  
+  .newsletter {
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .newsletter p {
+    padding-top: 3px;
+  
+  }
+  
+  
+  .newsletter form {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .newsletter button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  footer {
+    background-color: #35322f;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 5px 0px 5px rgba(165, 165, 165, 0.596);
+  }
+  
+  .social a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+  }
+  
+  .icon-twitter::before {
+    content: "\f099";
+  }
+  
+  .icon-instagram::before {
+    content: "\f16d";
+  }
+  
+  
+  /*----- Login/Registration -----*/
+  
+  
+  .login_regester_body{
+    background-color: #97876486;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    height: 50%;
+    width: 35%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.589);
+  }
+  
+  .Login-Registration-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  label {
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  input {
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  

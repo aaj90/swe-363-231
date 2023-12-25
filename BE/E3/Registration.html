@@ -19,36 +19,36 @@
     <section class="container card w-75 mt-5">
         <div class="card-body ps-5 pe-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form>
+            <form method="POST">
                 <!-- Name input -->
                 <div class="form-outline mb-4">
                     <label class="form-label">Name</label>
-                    <input type="text" class="form-control" placeholder="Name" />
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" />
                 </div>
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <label class="form-label">Email address</label>
-                    <input type="email" class="form-control" placeholder="examble@examble.com" />
+                    <input type="email" name="email" id="email" class="form-control" placeholder="examble@examble.com" />
                 </div>
 
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="********" />
+                    <input type="password" name="password1" id="password1" class="form-control" placeholder="********" />
                 </div>
 
                 <!-- confirm password input -->
                 <div class="form-outline mb-4">
                     <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" placeholder="********" />
+                    <input type="password" name="password2" id="password2" class="form-control" placeholder="********" />
                 </div>
 
                 <!-- Phone Number input -->
                 <div class="form-outline mb-4">
                     <label class="form-label">Phone Number</label>
-                    <input type="tel" class="form-control" placeholder="05********" />
+                    <input type="tel" name="tel" id="tel" class="form-control" placeholder="05********" />
                 </div>
 
                 <!-- Submit button -->
